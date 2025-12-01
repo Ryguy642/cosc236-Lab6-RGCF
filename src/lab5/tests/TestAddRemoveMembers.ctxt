@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TestAddRemoveMembers
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ AddMember()
+comment3.params=
+comment3.target=void\ RemoveMembersMember()
+comment4.params=
+comment4.target=void\ RemoveMemberString()
+comment5.params=
+comment5.target=void\ RemoveMemberWithBooks()
+numComments=6

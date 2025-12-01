@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TestNotAvailableBook
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ tryToBorrowBookBook()
+numComments=3

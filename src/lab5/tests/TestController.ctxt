@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=TestController
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ borrowBooksByController()
+comment3.params=
+comment3.target=void\ removeBooksByController()
+comment4.params=
+comment4.target=void\ removeMemberByController()
+comment5.params=
+comment5.target=void\ removeMemberWithBooksByController()
+comment6.params=
+comment6.target=void\ showBook()
+comment7.params=
+comment7.target=void\ showMember()
+numComments=8

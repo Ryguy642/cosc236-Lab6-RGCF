@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Book
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment2.params=isAvailable
+comment2.target=void\ setIsAvailable(boolean)
+comment3.params=
+comment3.target=boolean\ getIsAvailable()
+comment4.params=
+comment4.target=java.lang.String\ getTitle()
+numComments=5
