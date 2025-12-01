@@ -9,6 +9,7 @@ import lab5.EBook;
 import lab5.PaperBook;
 import lab5.AudioBook;
 import lab5.Book;
+import lab5.BorrowingService;
 import lab5.Library;
 
 
@@ -26,7 +27,8 @@ class TestRemoveMemberWithBooks {
         book1 = new AudioBook("Dune");
         book2 = new EBook("1984");
         book3 = new PaperBook("Moby Dick");
-        member = new Member("Dude");
+        BorrowingService borrowingService = new BorrowingService();
+        member = new Member("Dude", borrowingService);
         library.addMember(member);
         library.addBook(book1);
         library.addBook(book2);

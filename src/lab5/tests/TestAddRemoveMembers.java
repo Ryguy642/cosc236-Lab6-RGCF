@@ -11,6 +11,7 @@ import lab5.PaperBook;
 import lab5.EBook;
 import lab5.Library;
 import lab5.Book;
+import lab5.BorrowingService;
 
 class TestAddRemoveMembers {
 
@@ -22,8 +23,9 @@ class TestAddRemoveMembers {
          this.library = new Library(); // empty library for each test
     }
     
-    Member member1 = new Member("Dude");
-    Member member2 = new Member("Gal");
+    BorrowingService borrowingService = new BorrowingService();
+    Member member1 = new Member("Dude", borrowingService);
+    Member member2 = new Member("Gal", borrowingService);
     Book book1 = new EBook("Dune");
     Book book2 = new PaperBook("1984");
     

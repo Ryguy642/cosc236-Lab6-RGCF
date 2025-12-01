@@ -10,6 +10,7 @@ import lab5.PaperBook;
 import lab5.EBook;
 import lab5.AudioBook;
 import lab5.Book;
+import lab5.BorrowingService;
 
 class TestExoticBooks {
     /* This class is intended to test the addition of exotic book types.
@@ -24,8 +25,10 @@ class TestExoticBooks {
     Book book3 = new AudioBook("The Count of Monte Cristo");
     @BeforeEach
     void setUp() throws Exception {
-        member1 = new Member("Alice"); // flush borrowedBook array 
-        member2 = new Member("Bob");   // flush borrowedBook array 
+    	BorrowingService borrowingService = new BorrowingService();
+    	member1 = new Member("Alice", borrowingService); // flush borrowedBook array 
+    	member2 = new Member("Bob", borrowingService);   // flush borrowedBook array 
+ 
         book1.setIsAvailable(true);
         book2.setIsAvailable(true);
         this.library = new Library(); // empty library for each test
