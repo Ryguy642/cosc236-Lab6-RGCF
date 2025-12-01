@@ -1,0 +1,22 @@
+Part 4 236 Lab reflection
+Applying the Dependency Inversion Principle to the book class is excellent because I did not have to modify much code to get the additional implementations of the Book interface up and running by ensuring they depended on the abstract intermediary Book.
+
+To incorporate DVDs and renting rooms, I would make the book class inherit from a new top-level abstract class -> rentable, applying the same benefits to these new implementations as Book does for its own. If the DIP was not applied, it would be significantly more difficult as this new Rentable superclass would have to have more of its own code and implementation, having defaults that might interfere with other classes trying to access its subclasses. This would also mean that book's subclasses would have to only inherit (since no implementations anymore) from Book, applying the same downsides to them as well as possibly not being able to directly call or override methods from Rentable. Overall, this would make it much more difficult to add new book types and create implementations of Rentable, reducing maintainability and flexibility.
+
+Part 6.
+1.These special cases do not need to be reflected to the members. If a book is damaged or stolen, it is simply unavailable, and we can just set its availability to false if so. Same with members we want to expunge. We just remove them from the list since removal due to death, cancellation and expulsion are functionally the same.
+
+2.
+A.
+Returning the Wrong Book
+ - Caused by the user returning the improper book (A book that doesn't exist in the library)
+ - This could be handled simply by checking if the book the member is if the book existed in the list of books taken out by the member.
+ - It does impact the borrow class and means that since we have gone with a more coupled and less streamlined design, borrowing will have to add an extra catch case instead of this scenario being unable to happen.
+B. Downtime
+- The library needs to shut down temporarily to perform maintenance
+- Just shut down the library system refuse to interact with and automatically calling any members who attempt to return a book's  'borrowbook' method and refusing to allow borrowing books. Extend any deadlines until past the maintenance, not allowing any interaction. 
+- It will affected all the classes including borrowingservice, but as borrowingservice will be unable to be called not much will change.
+C. A book is stolen 
+- A book has been stolen from the library.
+- Delete the book object.
+ - N/A.
