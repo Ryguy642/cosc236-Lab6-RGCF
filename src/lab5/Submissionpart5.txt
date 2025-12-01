@@ -1,0 +1,7 @@
+I took all borrowing aspects out of the member class as SRP requires us to have a class only focus on 
+one thing. Since the member class is focused on the information of the members the borrowing logic was moved.
+I chose to put the borrowing functionality into BorrowingService because it interacts with both the book and member classes.
+The borrowingService involves both members and books and so it is the best place to have this code.
+An issue that I ran into was that it broke existing behavior so I had to update some of the files (mainly the test ones)
+This is because too many files relied on the member class handling the borrowing function and created their own 
+instances of members
