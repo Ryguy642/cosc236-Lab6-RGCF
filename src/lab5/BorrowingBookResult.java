@@ -3,22 +3,22 @@ package lab5;
 public class BorrowingBookResult{
     
     private String borrowingMessage;
-    private boolean isSucess;
+    private boolean isSuccess;
     
-    public BorrowingBookResult(boolean isSucess, String title) {
+    public BorrowingBookResult(boolean isSuccess, String title) {
         this.borrowingMessage = title;
-        this.isSucess = isSucess;
+        this.isSuccess = isSuccess;
     }
-    public void setborrowingMessage(String w) {
+    public void setBorrowingMessage(String w) {
         borrowingMessage = w;
     }
-    public void setisSucess(boolean w) {
-        isSucess = w;
+    public void setisSuccess(boolean w) {
+        isSuccess = w;
     }
-    public String getborrowingMessage() {
+    public String getBorrowingMessage() {
         return borrowingMessage;
     }
-    public boolean getisSucess() {
-        return isSucess;
+    public boolean getIsSuccess() {
+        return isSuccess;
     }
 }

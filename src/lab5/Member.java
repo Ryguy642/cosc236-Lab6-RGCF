@@ -1,59 +1,62 @@
 package lab5;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Member {
-
     private String name;
-    private ArrayList<Book> borrowedBooks; // Book class dependency
-    
-    public Member(String name) {
+    private ArrayList<Book> borrowedBooks;
+    private BorrowingService borrowingService;
+
+    public Member(String name, BorrowingService service) {
         this.name = name;
         this.borrowedBooks = new ArrayList<>();
+        this.borrowingService = service; // Injected from outside
     }
+
     public String getName() {
         return name;
     }
-    public ArrayList<Book> getBorrowedBooks() { 
+
+    public ArrayList<Book> getBorrowedBooks() {
         return borrowedBooks;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    public String toString() {
-        return "Member: " + name;
-    }
+
     public void borrowBook(Book book) {
-        if (book != null && book.getIsAvailable() == true) {
-            borrowedBooks.add(book);
-            book.setIsAvailable(false);
-        }
+        BorrowingBookResult result = borrowingService.borrowBook(this, book);
+        System.out.println(result.getBorrowingMessage());
     }
+
     public void returnBook(Book book) {
-        if (book != null) {
-            borrowedBooks.remove(book);
-            book.setIsAvailable(true);
-        }
+        BorrowingBookResult result = borrowingService.returnBook(this, book);
+        System.out.println(result.getBorrowingMessage());
     }
+
     public void listBorrowedBooks() {
         for (Book book : borrowedBooks)
-            System.out.println(book); // book.toString()
+            System.out.println(book);
     }
+
     public int borrowedBooksCount() {
         return borrowedBooks.size();
     }
+
     public void returnAllBooks() {
-        Iterator<Book> bookIterator = borrowedBooks.iterator();
-        while(bookIterator.hasNext()) {
-                Book book = bookIterator.next();
-                book.setIsAvailable(true);
+        for (Book book : borrowedBooks) {
+            book.setIsAvailable(true);
         }
-        borrowedBooks.clear(); // clear array of borrowed books
+        borrowedBooks.clear();
     }
-    
-    //temporary
+
     public void addBook(Book book) {
         borrowedBooks.add(book);
+    }
+
+    @Override
+    public String toString() {
+        return "Member: " + name;
     }
 }
