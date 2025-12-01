@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=AudioBook
+comment1.params=title
+comment1.target=AudioBook(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getTitle()
+comment3.params=title
+comment3.target=void\ setTitle(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=isAvailable
+comment5.target=void\ setIsAvailable(boolean)
+comment6.params=
+comment6.target=boolean\ getIsAvailable()
+numComments=7
