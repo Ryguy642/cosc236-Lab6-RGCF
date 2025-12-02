@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=BorrowingBookResult
-comment1.params=isSucess\ title
+comment1.params=isSuccess\ title
 comment1.target=BorrowingBookResult(boolean,\ java.lang.String)
 comment2.params=w
-comment2.target=void\ setborrowingMessage(java.lang.String)
+comment2.target=void\ setBorrowingMessage(java.lang.String)
 comment3.params=w
-comment3.target=void\ setisSucess(boolean)
+comment3.target=void\ setisSuccess(boolean)
 comment4.params=
-comment4.target=java.lang.String\ getborrowingMessage()
+comment4.target=java.lang.String\ getBorrowingMessage()
 comment5.params=
-comment5.target=boolean\ getisSucess()
+comment5.target=boolean\ getIsSuccess()
 numComments=6

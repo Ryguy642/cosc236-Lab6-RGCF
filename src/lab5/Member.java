@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Member {
     private String name;
-    private ArrayList<Book> borrowedBooks;
+    private ArrayList<Book> borrowedBooks = new ArrayList<>();
     private BorrowingService borrowingService;
 
     public Member(String name, BorrowingService service) {
@@ -34,7 +34,9 @@ public class Member {
         BorrowingBookResult result = borrowingService.returnBook(this, book);
         System.out.println(result.getBorrowingMessage());
     }
-
+    public void deleteBook(Book book) {
+        borrowedBooks.remove(book);
+    }
     public void listBorrowedBooks() {
         for (Book book : borrowedBooks)
             System.out.println(book);
@@ -59,4 +61,9 @@ public class Member {
     public String toString() {
         return "Member: " + name;
     }
+    
+    public BorrowingService getBorrowingService(){
+        return borrowingService;
+    }
 }
+

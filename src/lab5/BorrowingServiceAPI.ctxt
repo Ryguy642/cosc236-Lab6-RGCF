@@ -1,9 +1,7 @@
 #BlueJ class context
 comment0.target=BorrowingServiceAPI
-comment1.params=
-comment1.target=java.lang.String\ toString()
-comment2.params=
-comment2.target=BorrowingBookResult\ borrowBook()
-comment3.params=
-comment3.target=BorrowingBookResult\ returnBook()
-numComments=4
+comment1.params=member\ book
+comment1.target=BorrowingBookResult\ borrowBook(Member,\ Book)
+comment2.params=member\ book
+comment2.target=BorrowingBookResult\ returnBook(Member,\ Book)
+numComments=3

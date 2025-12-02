@@ -56,7 +56,7 @@ public class LibraryApp {
         librarian.addMember("Alice");
         librarian.addMember("Bob");
         
-        librarian.borrowBookByMember("Dune", "Alice");
+        //librarian.borrowBookByMember("Dune", "Alice");
         librarian.borrowBookByMember("1984", "Alice");
         librarian.borrowBookByMember("Moby Dick", "Bob");
         librarian.borrowBookByMember("Dune", "Bob"); // will be rejected
