@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=BookFactory
+comment1.params=title
+comment1.target=Book\ createBook(java.lang.String)
+numComments=2

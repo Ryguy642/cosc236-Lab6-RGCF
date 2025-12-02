@@ -1,13 +1,29 @@
 package lab5;
+import java.util.*;
 
 public class LibrarianController {
     
+    /* WTH is this? WHY?
+     * 3. Update the LibrarianController class to include three members, one for each type of
+BookFactory. Initialize these members in the constructor.
+     */
     private Library library; // Library dependency
     private BorrowingService borrowingService; // Singleton
+    private PaperBookFactory PFac;
+     private EBookFactory EFac;
+     private AudioBookFactory AFac;
     public LibrarianController( ) {
         this.library = new Library(); // Constructor injection
         //Holds the single instance of borrowingService
         this.borrowingService = BorrowingService.getInstance();
+        
+        //Holds garbage members for some reason
+        this.addMember("Secret Wizard who likes Paperbooks");
+        this.addMember("Secret Warlock who likes Audiobooks");
+        this.addMember("Secret Witch who likes EBooks");
+        this.PFac = new PaperBookFactory();
+        this.EFac = new EBookFactory();
+        this.AFac = new AudioBookFactory();
     }
     public Library getLibrary() {
         return this.library;
@@ -21,14 +37,20 @@ public class LibrarianController {
     
     //Specify Book type in this method
     public void addPaperBook(String title) {
-        library.addBook(new PaperBook(title));  // Book class constructor dependency
+        addBook(PFac, title);  // Book class constructor dependency
     }
     public void addEBook(String title) {
-        library.addBook(new EBook(title));  // Book class constructor dependency
+        addBook(EFac, title);  // Book class constructor dependency
     }
     public void addAudioBook(String title) {
-        library.addBook(new AudioBook(title));  // Book class constructor dependency
+        addBook(AFac, title);  // Book class constructor dependency
     }
+    
+    public void addBook(BookFactory factory, String title) {
+library.addBook(factory.createBook(title)); // Book type depends on
+ // the factory passed in
+}
+
     public void addMember(String name) {
         library.addMember(new Member(name, borrowingService)); // Member class constructor dependency
     }
