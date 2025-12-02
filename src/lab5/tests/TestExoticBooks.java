@@ -11,7 +11,6 @@ import lab5.EBook;
 import lab5.AudioBook;
 import lab5.Book;
 import lab5.BorrowingService;
-
 class TestExoticBooks {
     /* This class is intended to test the addition of exotic book types.
      * Other classes have been modified to incorporate exotic book types.
@@ -20,14 +19,15 @@ class TestExoticBooks {
     Member member1;
     Member member2;
     private Library library;
+    private BorrowingService borrowingService = new BorrowingService();
     Book book1 = new AudioBook("Dune");
     Book book2 = new EBook("1984");
     Book book3 = new AudioBook("The Count of Monte Cristo");
     @BeforeEach
     void setUp() throws Exception {
-    	BorrowingService borrowingService = new BorrowingService();
-    	member1 = new Member("Alice", borrowingService); // flush borrowedBook array 
-    	member2 = new Member("Bob", borrowingService);   // flush borrowedBook array 
+        
+        member1 = new Member("Alice", borrowingService); // flush borrowedBook array 
+        member2 = new Member("Bob", borrowingService);   // flush borrowedBook array 
  
         book1.setIsAvailable(true);
         book2.setIsAvailable(true);
